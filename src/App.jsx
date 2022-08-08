@@ -1,9 +1,10 @@
 import { useState, useEffect, Component } from "react";
 
 import "./App.css";
-import {CardList} from './components/card-list/CardList'
+import { CardList } from "./components/card-list/CardList";
 function App() {
   const [monsters, setMonsters] = useState([]);
+
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <CardList monsters={monsters}/>
+      <CardList monsters={monsters} />
     </div>
   );
 }
