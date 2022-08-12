@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  font-family: 'Tangerine', cursive;
+  font-family: "Tangerine", cursive;
 }
 
 .App h1 {
@@ -11,9 +11,28 @@
   font-size: 3.5rem;
   margin-bottom: 0.5em;
 }
-
+.App .bio {
+  font-size: 3em;
+  position: fixed;
+  right: 1em;
+}
+.App .bio a,
+.App .bio a:link {
+  font-size: 1em;
+  color: #95dada;
+  text-decoration: underline;
+}
+.App .bio a:hover {
+  text-decoration: none;
+  font-size: 1.2em;
+}
 @media (max-width: 530px) {
   .App h1 {
     font-size: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .App .bio {
+    bottom: 1em;
   }
 }
