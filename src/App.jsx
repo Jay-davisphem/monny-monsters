@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(searchField);
+    console.info(searchField);
   }, [searchField]);
 
   const handleChange = (e) => {
@@ -26,7 +26,7 @@ function App() {
   );
   return (
     <div className="App">
-      <p class='bio'>Made with love by <a href='https://davisphem.me'>davisphem</a></p>
+      <p className='bio'>Made with love by <a href='https://davisphem.me'>davisphem</a></p>
       <h1>Monny Monster</h1>
       <SearchBox onChange={handleChange} />
       <CardList monsters={filteredMonsters} />
