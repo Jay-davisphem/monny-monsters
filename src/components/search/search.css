@@ -19,6 +19,9 @@
   cursor: text;
   border: none;
   width: 100%;
+  font-family: "Tangerine", cursive;
+  font-size: 2.5em;
+  line-height: 0;
 }
 .search-icon {
 }

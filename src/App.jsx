@@ -26,6 +26,7 @@ function App() {
   );
   return (
     <div className="App">
+      <h1>Monny Monster</h1>
       <SearchBox onChange={handleChange} />
       <CardList monsters={filteredMonsters} />
     </div>
