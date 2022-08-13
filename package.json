@@ -2,8 +2,7 @@
   "name": "monny-monsters",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "homepage": "https://davisphem.me/monny-monsters",
+  "homepage": "https://jay-davisphem.github.io/monny-monsters",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
