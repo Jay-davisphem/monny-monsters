@@ -3,12 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://davisphem.me/monny-monsters",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy":"yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0"
