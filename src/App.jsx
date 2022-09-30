@@ -1,7 +1,8 @@
 import { useState, useEffect, Component } from "react";
-
+import {Routes, BrowserRouter as Router, Route} from 'react-router-dom'
 import "./App.css";
 import { CardList } from "./components/card-list/CardList";
+import {Card} from './components/user-profile/UserProfile'
 import { SearchBox } from "./components/search/SearchBox";
 function App() {
   const [monsters, setMonsters] = useState([]);
@@ -27,34 +28,18 @@ function App() {
   return (
     <div className="App">
       <p className='bio'>Made with love by <a href='https://davisphem.me'>davisphem</a></p>
-      <h1>Monny Monster</h1>
+      <a href='/'><h1 style={{cursor: 'pointer'}} >Monny Monster</h1></a>
+      <Router>
+        <Routes>
+          <Route path='' element={<>
       <SearchBox onChange={handleChange} />
-      <CardList monsters={filteredMonsters} />
+            <CardList monsters={filteredMonsters} /></>} />
+          <Route path='monsters/:monsterId' element={monsters[0]?<Card monsters={monsters}/>: <h3 style={{fontSize: '30px'}}>Empty</h3>} />
+          <Route path='*' element={<h3 style={{fontSize: '30px'}}>Not Found</h3>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
-/*class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      monsters: [
-      ]
-    };
-  }
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((users) => this.setState({monsters: users}));
-  }
-  render() {
-    return (
-      <div className="App">
-        {this.state.monsters.map((monster) => (
-          <h1 key={monster.id}> {monster.name}</h1>
-        ))}
-      </div>
-    );
-  }
-}*/
 export default App;

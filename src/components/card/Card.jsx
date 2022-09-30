@@ -1,8 +1,7 @@
 import "./card.css";
-
-export const Card = ({ monster }) => {
+export const Card = ({ monster, onClick}) => {
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={onClick}>
       <img
         alt={`monster${monster.id}`}
         src={`https://robohash.org/${monster.id}?set=set2&size=120x120`}
