@@ -1,7 +1,8 @@
 import { Card } from "../card/Card";
+import WithSpinner from '../with-spinner/WithSpinner'
 import "./card-list.css";
 import {useNavigate} from 'react-router-dom'
-export const CardList = ({ monsters }) => {
+export const CardList = WithSpinner(({ monsters }) => {
   const navigate = useNavigate()
   return (
     <div className="card-list">
@@ -10,4 +11,4 @@ export const CardList = ({ monsters }) => {
       ))}
     </div>
   );
-};
+})

@@ -7,11 +7,11 @@ import { SearchBox } from "./components/search/SearchBox";
 function App() {
   const [monsters, setMonsters] = useState([]);
   const [searchField, setSearchField] = useState("");
-
+  const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
-      .then((users) => setMonsters(users));
+      .then((users) => {setIsLoading(false);setMonsters(users)});
   }, []);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
         <Routes>
           <Route path='' element={<>
       <SearchBox onChange={handleChange} />
-            <CardList monsters={filteredMonsters} /></>} />
+            <CardList monsters={filteredMonsters} isLoading={isLoading}/></>} />
           <Route path='monsters/:monsterId' element={monsters[0]?<Card monsters={monsters}/>: <h3 style={{fontSize: '30px'}}>Empty</h3>} />
           <Route path='*' element={<h3 style={{fontSize: '30px'}}>Not Found</h3>} />
         </Routes>
